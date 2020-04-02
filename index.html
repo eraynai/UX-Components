@@ -9,41 +9,43 @@
   </head>
 
   <body>
+    <div class="progress"></div>
     <header>
       <h1>The World of Cats</h1>
-      <div class="about">About Them</div>
+      <div class="nav">About Them</div>
       <div class="page">1/5</div>
       <div class="pixels">0</div>
     </header>
-    <section>
+    <section data-nav="About Them" data-page="1/5">
       <div class="content">
         <div class="square"></div>
         <img src="img/cat1.jpg" alt="cat sleeping" />
         <div class="circle"></div>
       </div>
     </section>
-    <section class="s2">
+
+    <section class="s2" data-nav="Evolution" data-page="2/5">
       <div class="content">
         <div class="circle"></div>
         <img src="img/cat2.jpg" alt="cat looking on street" />
         <div class="square"></div>
       </div>
     </section>
-    <section class="s3">
+    <section class="s3" data-nav="Domestic" data-page="3/5" data-is-dark="yes">
       <div class="content">
         <div class="circle"></div>
         <img src="img/cat3.jpg" alt="cat high five with owner" />
         <div class="square"></div>
       </div>
     </section>
-    <section class="s4">
+    <section class="s4" data-nav="Claws" data-page="4/5">
       <div class="content">
         <div class="circle"></div>
         <img src="img/cat4.jpg" alt="cat yawning" />
         <div class="square"></div>
       </div>
     </section>
-    <section class="s5">
+    <section class="s5" data-nav="Balance" data-page="5/5">
       <div class="content">
         <div class="square"></div>
         <img src="img/cat5.jpg" alt="cat posing" />
@@ -51,5 +53,6 @@
       </div>
     </section>
     <script src="main.js"></script>
+    <script src="animation.js"></script>
   </body>
 </html>
