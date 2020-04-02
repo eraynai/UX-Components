@@ -10,6 +10,7 @@ const headerTag = document.querySelector('header');
 const nextTag = document.getElementById('next');
 const previousTag = document.getElementById('prev');
 const outputTag = document.querySelector('h2.Text2');
+const sectionTag = document.querySelector('section.s0')
 let slideNum = 0;
 const states = [{
     copy: 'beautiful',
@@ -17,15 +18,22 @@ const states = [{
     circle: '#3e783d'
   },
   {
-    copy: 'Meow'
+    copy: 'Meow',
+    backgroundColor: '#a1fffe',
+    circle: '#e34a47'
   },
   {
-    copy: 'Furry'
+    copy: 'Furry',
+    backgroundColor: '#d3c7f3',
+    circle: '#f7fe00'
   },
   {
-    copy: 'Fluffy'
+    copy: 'Fluffy',
+    backgroundColor: '#faffb8',
+    circle: '#b472e6'
   }
 ];
+const circleTag = document.querySelector('.circleH');
 
 //when we scroll the page, update the pixels tag to show how far we've scrolled
 
@@ -82,7 +90,6 @@ const next = function () {
 //this function to decrease the slide number
 const previous = function () {
   slideNum = slideNum - 1;
-  console.log(slideNum);
 
   if (slideNum < 0) {
     slideNum = states.length - 1;
@@ -94,6 +101,8 @@ const previous = function () {
 
 const updateSection = function () {
   outputTag.innerHTML = states[slideNum].copy;
+  circleTag.style.backgroundColor = states[slideNum].circle;
+  sectionTag.style.backgroundColor = states[slideNum].backgroundColor;
 }
 
 //on click of nextTag, run this 
