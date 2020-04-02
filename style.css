@@ -70,6 +70,7 @@ section.s0 div.circleH {
   background-color: #3e78ed;
   border-radius: 50%;
   display: inline-block;
+  transition: background-color 0.5s;
 }
 
 section.s div.navigation img {
