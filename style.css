@@ -39,6 +39,7 @@ section.pic {
 
 section.s0 {
   background-color: #edc7a9;
+  transition: background-color 0.5s;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
