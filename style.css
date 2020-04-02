@@ -29,14 +29,52 @@ header.white {
 }
 
 
-section {
-  background-color: #c8dee0;
+section.pic {
   min-height: 100vh;
   padding: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+section.s0 {
+  background-color: #edc7a9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 4em;
+}
+
+section.s0 h1.Text1 {
+  font-size: 2em;
+  font-weight: 800;
+}
+
+section.s0 h2.Text2 {
+  font-size: 2.5em;
+  font-weight: 200;
+}
+
+section.s0 div.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.s0 div.circleH {
+  width: 20px;
+  height: 20px;
+  background-color: #3e78ed;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+section.s div.navigation img {
+  height: 20px;
+}
+
 
 
 div.content {
@@ -67,7 +105,9 @@ div.content img {
   position: relative;
 }
 
-
+section.s1 {
+  background-color: #c8dee0;
+}
 
 section.s2 {
   background-color: #c5c5c5;

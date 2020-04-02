@@ -7,6 +7,25 @@ const sections = document.querySelectorAll('section');
 const navTag = document.querySelector('div.nav');
 const pageTag = document.querySelector('div.page');
 const headerTag = document.querySelector('header');
+const nextTag = document.getElementById('next');
+const previousTag = document.getElementById('prev');
+const outputTag = document.querySelector('h2.Text2');
+let slideNum = 0;
+const states = [{
+    copy: 'beautiful',
+    backgroundColor: '#3e78ed',
+    circle: '#3e783d'
+  },
+  {
+    copy: 'Meow'
+  },
+  {
+    copy: 'Furry'
+  },
+  {
+    copy: 'Fluffy'
+  }
+];
 
 //when we scroll the page, update the pixels tag to show how far we've scrolled
 
@@ -48,4 +67,43 @@ document.addEventListener('scroll', function () {
   })
 })
 
-//when we scroll the page, make things parallax, to do this we want to move 
+//this function to increases the slide number
+
+const next = function () {
+  slideNum = slideNum + 1;
+
+  if (slideNum > states.length - 1) {
+    slideNum = 0;
+  }
+
+  updateSection();
+}
+
+//this function to decrease the slide number
+const previous = function () {
+  slideNum = slideNum - 1;
+  console.log(slideNum);
+
+  if (slideNum < 0) {
+    slideNum = states.length - 1;
+  }
+  updateSection();
+}
+
+//This will update the sections content and style
+
+const updateSection = function () {
+  outputTag.innerHTML = states[slideNum].copy;
+}
+
+//on click of nextTag, run this 
+
+nextTag.addEventListener("click", function () {
+  next();
+
+})
+
+//on click of previousTag, run this
+previousTag.addEventListener("click", function () {
+  previous();
+})
