@@ -35,8 +35,6 @@ const states = [{
   }
 ];
 const circleTag = document.querySelector('.circleH');
-
-//Capture Nav links
 const navCatlinks = document.querySelectorAll('.catNav a');
 
 //Add eventlistener to navCatlinks
