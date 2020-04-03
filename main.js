@@ -7,33 +7,59 @@ const sections = document.querySelectorAll('section');
 const navTag = document.querySelector('div.nav');
 const pageTag = document.querySelector('div.page');
 const headerTag = document.querySelector('header');
-const nextTag = document.getElementById('next');
-const previousTag = document.getElementById('prev');
+const nextTag = document.querySelector('#next');
+const previousTag = document.querySelector('#prev');
+const randomTag = document.querySelector('#rand');
 const outputTag = document.querySelector('h2.Text2');
 const sectionTag = document.querySelector('section.s0')
 let slideNum = 0;
 const states = [{
-    copy: 'beautiful',
+    copy: "Cats Choose Us, We Don't Own Them. -Kristen Cast",
     backgroundColor: '#3e78ed',
     circle: '#3e783d'
   },
   {
-    copy: 'Meow',
+    copy: 'In Ancient Times Cats Were Worshipped Like Gods. -Terry Pratchett',
     backgroundColor: '#a1fffe',
     circle: '#e34a47'
   },
   {
-    copy: 'Furry',
+    copy: 'Way Down Deep, We Are All Motivated By the Same Urges. -Jim Davis',
     backgroundColor: '#d3c7f3',
     circle: '#f7fe00'
   },
   {
-    copy: 'Fluffy',
+    copy: 'Time spent with Cats is Never Wasted. -Sigmund Freud',
     backgroundColor: '#faffb8',
     circle: '#b472e6'
   }
 ];
 const circleTag = document.querySelector('.circleH');
+
+//Capture Nav links
+const navCatlinks = document.querySelectorAll('.catNav a');
+
+//Add eventlistener to navCatlinks
+
+navCatlinks.forEach(elem => elem.addEventListener('click', navCatlinksClick));
+
+//function to call smoothscroll
+
+function navCatlinksClick(event) {
+  smoothScroll(event);
+}
+
+//smoothscrolling function
+
+function smoothScroll(event) {
+  event.preventDefault();
+  const targetId = event.currentTarget.getAttribute("href");
+  document.querySelector(targetId).scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
 
 //when we scroll the page, update the pixels tag to show how far we've scrolled
 
@@ -95,7 +121,16 @@ const previous = function () {
     slideNum = states.length - 1;
   }
   updateSection();
-}
+};
+
+
+//pick a random slide 
+const random = function () {
+  slideNum = Math.floor(Math.random() * states.length);
+
+  updateSection();
+};
+
 
 //This will update the sections content and style
 
@@ -103,7 +138,7 @@ const updateSection = function () {
   outputTag.innerHTML = states[slideNum].copy;
   circleTag.style.backgroundColor = states[slideNum].circle;
   sectionTag.style.backgroundColor = states[slideNum].backgroundColor;
-}
+};
 
 //on click of nextTag, run this 
 
@@ -115,4 +150,10 @@ nextTag.addEventListener("click", function () {
 //on click of previousTag, run this
 previousTag.addEventListener("click", function () {
   previous();
+})
+
+//on click of randomTag, run this
+
+randomTag.addEventListener("click", function () {
+  random();
 })

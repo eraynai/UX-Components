@@ -28,6 +28,15 @@ header.white {
   color: #ffffff;
 }
 
+nav.catNav {
+  position: fixed;
+  top: 160px;
+  right: 46px;
+  height: 75px;
+  width: 75px;
+  line-height: 4em;
+}
+
 
 section.pic {
   min-height: 100vh;
