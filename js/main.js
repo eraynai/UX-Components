@@ -62,9 +62,10 @@ function smoothScroll(event) {
 //when we scroll the page, update the pixels tag to show how far we've scrolled
 
 document.addEventListener("scroll", function () {
-  const pixels = window.pageYOffset;
+  const pixels = Math.floor(window.pageYOffset);
 
-  pixelsTag.innerHTML = Math.floor(pixels);
+  pixelsTag.innerHTML = pixels;
+  console.log(pixels);
 });
 
 //when we scroll the page, make a progress bar that keeps track of the distance
